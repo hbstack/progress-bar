@@ -1,0 +1,2 @@
+{{- $params := site.Params.hb.progress_bar }}
+$hb-progress-bar-height: {{ default "2px" $params.height }};
