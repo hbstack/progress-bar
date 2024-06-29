@@ -36,11 +36,18 @@ export default class Progress {
         this.bar = bar
     }
 
+    private timer = 0
+
     show() {
         this.ele.classList.remove('d-none')
-        setInterval(() => {
+        this.timer = setInterval(() => {
             this.width += this.step
             this.bar.style.width = `${this.width}%`
         }, this.interval)
+    }
+
+    hide() {
+        this.ele.classList.add('d-none')
+        clearInterval(this.timer)
     }
 }
